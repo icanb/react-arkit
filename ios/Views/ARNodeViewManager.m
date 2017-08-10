@@ -1,3 +1,9 @@
+//  ReactArkit
+//
+//  Created by Ilter Canberk on 8/6/17.
+//  Copyright © 2017. All rights reserved.
+//
+
 #import <React/RCTBridgeModule.h>
 #import <React/RCTViewManager.h>
 #import "RNReactArkit-Swift.h"

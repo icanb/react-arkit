@@ -1,6 +1,6 @@
 //
 //  ARSceneView.swift
-//  ARReactiveTwo
+//  ReactArkit
 //
 //  Created by Ilter Canberk on 8/6/17.
 //  Copyright © 2017. All rights reserved.

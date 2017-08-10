@@ -1,8 +1,8 @@
 //
 //  ARSceneView.swift
-//  ARReactiveTwo
+//  RNReactArkit
 //
-//  Created by Ilter Canberk on 8/6/17.
+//  Created by Ilter Canberk on 8/9/17.
 //  Copyright © 2017. All rights reserved.
 //
 
