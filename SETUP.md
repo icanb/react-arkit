@@ -19,35 +19,29 @@
 3. In XCode, in the project navigator, select your project. Add `libRNReactArkit.a` to your project's `Build Phases` ➜ `Link Binary With Libraries`
 4. Run your project (`Cmd+R`)<
 
-#### Android
 
-1. Open up `android/app/src/main/java/[...]/MainActivity.java`
-  - Add `import com.reactlibrary.RNReactArkitPackage;` to the imports at the top of the file
-  - Add `new RNReactArkitPackage()` to the list returned by the `getPackages()` method
-2. Append the following lines to `android/settings.gradle`:
-  	```
-  	include ':react-native-react-arkit'
-  	project(':react-native-react-arkit').projectDir = new File(rootProject.projectDir, 	'../node_modules/react-native-react-arkit/android')
-  	```
-3. Insert the following lines inside the dependencies block in `android/app/build.gradle`:
-  	```
-      compile project(':react-native-react-arkit')
-  	```
+## Configuring iOS Platform
 
-#### Windows
-[Read it! :D](https://github.com/ReactWindows/react-native)
+ie. How to deal with Xcode stuff...
 
-1. In Visual Studio add the `RNReactArkit.sln` in `node_modules/react-native-react-arkit/windows/RNReactArkit.sln` folder to their solution, reference from their app.
-2. Open up your `MainPage.cs` app
-  - Add `using Com.Reactlibrary.RNReactArkit;` to the usings at the top of the file
-  - Add `new RNReactArkitPackage()` to the `List<IReactPackage>` returned by the `Packages` method
+### Camera Permissions
 
+For our app to be able to launch the AR Scene, we need to ask the user for the permission to the phone camera. Before starting the following steps, launch your project on Xcode.
 
-## Usage
-```javascript
-import RNReactArkit from 'react-native-react-arkit';
-
-// TODO: What to do with the module?
-RNReactArkit;
+You can do this by, doing the following within the root of your project directory
+```bash
+open ios/<ProjectName>.xcodeproj/
 ```
-  
+
+Once the project is open on Xcode, find the `Info.plist` file:
+
+<img src="https://user-images.githubusercontent.com/803072/29158860-67ba3a40-7d61-11e7-83dd-0222384274c8.png" height="48">
+
+Click on one of the `+` signs that appear when you hover over a row. Add `Privacy - Camera Usage Description` as the key, and `This application will use the camera for Augmented Reality.` as the value.
+
+<img src="https://user-images.githubusercontent.com/803072/29158861-67ecfce6-7d61-11e7-8a00-b5b116d57c26.png" height="48">
+
+You should be good to go!
+
+### Making the project Swift compatible
+
