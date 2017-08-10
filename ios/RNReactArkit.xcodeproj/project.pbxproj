@@ -1,0 +1,328 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B3E7B58A1CC2AC0600A0062D /* RNReactArkit.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNReactArkit.m */; };
+		CE0694CC1F3B756400B114CB /* ARBoxNodeViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0694C71F3B756400B114CB /* ARBoxNodeViewManager.m */; };
+		CE0694CD1F3B756400B114CB /* ARSceneView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0694C21F3B756300B114CB /* ARSceneView.swift */; };
+		CE0694CE1F3B756400B114CB /* ARSphereNodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0694C41F3B756400B114CB /* ARSphereNodeView.swift */; };
+		CE0694CF1F3B756400B114CB /* ARBoxNodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0694CA1F3B756400B114CB /* ARBoxNodeView.swift */; };
+		CE0694D01F3B756400B114CB /* ARKitDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0694C11F3B756300B114CB /* ARKitDelegate.swift */; };
+		CE0694D11F3B756400B114CB /* ARNodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0694C91F3B756400B114CB /* ARNodeView.swift */; };
+		CE0694D21F3B756400B114CB /* ARSphereNodeViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0694C01F3B756300B114CB /* ARSphereNodeViewManager.m */; };
+		CE0694D31F3B756400B114CB /* ARNodeViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0694CB1F3B756400B114CB /* ARNodeViewManager.m */; };
+		CE0694D41F3B756400B114CB /* ARSceneViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0694C51F3B756400B114CB /* ARSceneViewManager.m */; };
+		CE0694D51F3B756400B114CB /* SCNNode+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0694BF1F3B756300B114CB /* SCNNode+Reactive.swift */; };
+		CE0694D61F3B756400B114CB /* RCTNodeViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0694C61F3B756400B114CB /* RCTNodeViewManager.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		58B511D91A9E6C8500147676 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		134814201AA4EA6300B7C361 /* libRNReactArkit.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNReactArkit.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		B3E7B5881CC2AC0600A0062D /* RNReactArkit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNReactArkit.h; sourceTree = "<group>"; };
+		B3E7B5891CC2AC0600A0062D /* RNReactArkit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNReactArkit.m; sourceTree = "<group>"; };
+		CE0694BE1F3B756300B114CB /* RNReactArkit-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "RNReactArkit-Bridging-Header.h"; sourceTree = "<group>"; };
+		CE0694BF1F3B756300B114CB /* SCNNode+Reactive.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SCNNode+Reactive.swift"; sourceTree = "<group>"; };
+		CE0694C01F3B756300B114CB /* ARSphereNodeViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ARSphereNodeViewManager.m; sourceTree = "<group>"; };
+		CE0694C11F3B756300B114CB /* ARKitDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARKitDelegate.swift; sourceTree = "<group>"; };
+		CE0694C21F3B756300B114CB /* ARSceneView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSceneView.swift; sourceTree = "<group>"; };
+		CE0694C31F3B756400B114CB /* RCTNodeViewManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RCTNodeViewManager.h; sourceTree = "<group>"; };
+		CE0694C41F3B756400B114CB /* ARSphereNodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARSphereNodeView.swift; sourceTree = "<group>"; };
+		CE0694C51F3B756400B114CB /* ARSceneViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ARSceneViewManager.m; sourceTree = "<group>"; };
+		CE0694C61F3B756400B114CB /* RCTNodeViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RCTNodeViewManager.m; sourceTree = "<group>"; };
+		CE0694C71F3B756400B114CB /* ARBoxNodeViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ARBoxNodeViewManager.m; sourceTree = "<group>"; };
+		CE0694C91F3B756400B114CB /* ARNodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARNodeView.swift; sourceTree = "<group>"; };
+		CE0694CA1F3B756400B114CB /* ARBoxNodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARBoxNodeView.swift; sourceTree = "<group>"; };
+		CE0694CB1F3B756400B114CB /* ARNodeViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ARNodeViewManager.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		58B511D81A9E6C8500147676 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		134814211AA4EA7D00B7C361 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				134814201AA4EA6300B7C361 /* libRNReactArkit.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		58B511D21A9E6C8500147676 = {
+			isa = PBXGroup;
+			children = (
+				CE0694D81F3B75A100B114CB /* Foundation */,
+				CE0694D71F3B759800B114CB /* Views */,
+				134814211AA4EA7D00B7C361 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		CE0694D71F3B759800B114CB /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CE0694CA1F3B756400B114CB /* ARBoxNodeView.swift */,
+				CE0694C71F3B756400B114CB /* ARBoxNodeViewManager.m */,
+				CE0694C91F3B756400B114CB /* ARNodeView.swift */,
+				CE0694CB1F3B756400B114CB /* ARNodeViewManager.m */,
+				CE0694C21F3B756300B114CB /* ARSceneView.swift */,
+				CE0694C51F3B756400B114CB /* ARSceneViewManager.m */,
+				CE0694C41F3B756400B114CB /* ARSphereNodeView.swift */,
+				CE0694C01F3B756300B114CB /* ARSphereNodeViewManager.m */,
+				CE0694C31F3B756400B114CB /* RCTNodeViewManager.h */,
+				CE0694C61F3B756400B114CB /* RCTNodeViewManager.m */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		CE0694D81F3B75A100B114CB /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
+				B3E7B5881CC2AC0600A0062D /* RNReactArkit.h */,
+				B3E7B5891CC2AC0600A0062D /* RNReactArkit.m */,
+				CE0694BE1F3B756300B114CB /* RNReactArkit-Bridging-Header.h */,
+				CE0694C11F3B756300B114CB /* ARKitDelegate.swift */,
+				CE0694BF1F3B756300B114CB /* SCNNode+Reactive.swift */,
+			);
+			path = Foundation;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		58B511DA1A9E6C8500147676 /* RNReactArkit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "RNReactArkit" */;
+			buildPhases = (
+				58B511D71A9E6C8500147676 /* Sources */,
+				58B511D81A9E6C8500147676 /* Frameworks */,
+				58B511D91A9E6C8500147676 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = RNReactArkit;
+			productName = RCTDataManager;
+			productReference = 134814201AA4EA6300B7C361 /* libRNReactArkit.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		58B511D31A9E6C8500147676 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0610;
+				ORGANIZATIONNAME = Facebook;
+				TargetAttributes = {
+					58B511DA1A9E6C8500147676 = {
+						CreatedOnToolsVersion = 6.1.1;
+						LastSwiftMigration = 0900;
+					};
+				};
+			};
+			buildConfigurationList = 58B511D61A9E6C8500147676 /* Build configuration list for PBXProject "RNReactArkit" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 58B511D21A9E6C8500147676;
+			productRefGroup = 58B511D21A9E6C8500147676;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				58B511DA1A9E6C8500147676 /* RNReactArkit */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		58B511D71A9E6C8500147676 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CE0694D61F3B756400B114CB /* RCTNodeViewManager.m in Sources */,
+				CE0694CE1F3B756400B114CB /* ARSphereNodeView.swift in Sources */,
+				CE0694D31F3B756400B114CB /* ARNodeViewManager.m in Sources */,
+				B3E7B58A1CC2AC0600A0062D /* RNReactArkit.m in Sources */,
+				CE0694D21F3B756400B114CB /* ARSphereNodeViewManager.m in Sources */,
+				CE0694D01F3B756400B114CB /* ARKitDelegate.swift in Sources */,
+				CE0694CC1F3B756400B114CB /* ARBoxNodeViewManager.m in Sources */,
+				CE0694D11F3B756400B114CB /* ARNodeView.swift in Sources */,
+				CE0694CF1F3B756400B114CB /* ARBoxNodeView.swift in Sources */,
+				CE0694D41F3B756400B114CB /* ARSceneViewManager.m in Sources */,
+				CE0694D51F3B756400B114CB /* SCNNode+Reactive.swift in Sources */,
+				CE0694CD1F3B756400B114CB /* ARSceneView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		58B511ED1A9E6C8500147676 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		58B511EE1A9E6C8500147676 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		58B511F01A9E6C8500147676 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../../../React/**",
+					"$(SRCROOT)/../../react-native/React/**",
+				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = RNReactArkit;
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Foundation/RNReactArkit-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		58B511F11A9E6C8500147676 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					"$(SRCROOT)/../../../React/**",
+					"$(SRCROOT)/../../react-native/React/**",
+				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = "$(inherited)";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = RNReactArkit;
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "Foundation/RNReactArkit-Bridging-Header.h";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		58B511D61A9E6C8500147676 /* Build configuration list for PBXProject "RNReactArkit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58B511ED1A9E6C8500147676 /* Debug */,
+				58B511EE1A9E6C8500147676 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		58B511EF1A9E6C8500147676 /* Build configuration list for PBXNativeTarget "RNReactArkit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				58B511F01A9E6C8500147676 /* Debug */,
+				58B511F11A9E6C8500147676 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 58B511D31A9E6C8500147676 /* Project object */;
+}

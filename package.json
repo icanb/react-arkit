@@ -1,0 +1,23 @@
+
+{
+  "name": "react-arkit",
+  "version": "0.1.4",
+  "description": "AR features for React Native, based on ARKit",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-native",
+    "arkit",
+    "react-arki",
+    "ar",
+    "augmented-reality"
+  ],
+  "author": "Ilter Canberk (@icanb)",
+  "license": "MIT License",
+  "peerDependencies": {
+    "react-native": "^0.41.2",
+    "react-native-windows": "0.41.0-rc.1"
+  }
+}
