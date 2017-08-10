@@ -1,5 +1,5 @@
 
-# react-native-react-arkit
+# React ARKit SETIP
 
 ## Getting started
 
@@ -45,3 +45,16 @@ You should be good to go!
 
 ### Making the project Swift compatible
 
+Since React-Native apps are by default Obj-c apps, we need to tell Xcode what Swift compiler to use for our Swift files. The easiest way to do this is to simply add a blank `.swift` file into the project.
+
+`File > New > File... >`
+
+This prompt should show up:
+
+<img src="https://user-images.githubusercontent.com/803072/29191535-ef4df412-7dd2-11e7-97f1-a4b63daca5d5.png" width="300">
+
+Make sure Swift File is selected. Press Next. Give the file an arbitrary name, or keep the default `File.swift`. In the next prompt you can choose not to create the Bridging Header file.
+
+That's it!
+
+ 
