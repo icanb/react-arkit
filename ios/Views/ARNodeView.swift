@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 import ARKit
 
-func warnForProp(_ prop:String) {
+func warnForProp(_ prop: String) {
     print("\(prop) must be provided to the node")
 }
 
-@objc public class ARNodeView:SCNNode {
-    
-    var modelNode:SCNNode?
+@objc public class ARNodeView: SCNNode {
+
+    var modelNode: SCNNode?
 
     override public init() {
         super.init()
@@ -32,11 +32,11 @@ func warnForProp(_ prop:String) {
         self.geometry = SCNBox.init()
     }
 
-    func setModelAssetPath(_ source:NSString) {
+    func setModelAssetPath(_ source: NSString) {
         let urlParts = source.components(separatedBy: ":")
         let geoScene = SCNScene(named: urlParts[0])
-        
-        guard let newModelNode:SCNNode = geoScene?.rootNode.childNode(withName: urlParts[1], recursively: true) else {
+
+        guard let newModelNode: SCNNode = geoScene?.rootNode.childNode(withName: urlParts[1], recursively: true) else {
             print("Asset url could not be resolved")
             return
         }
@@ -47,16 +47,16 @@ func warnForProp(_ prop:String) {
 
         self.modelNode = newModelNode
         self.addChildNode(newModelNode)
-        
+
         // Reset the position so that the child node is
         // positioned at the center of the parent node.
         // We don't want this to be affected by the positioning
         // within the scene.
-        self.modelNode?.position = SCNVector3Make(0,0,0);
+        self.modelNode?.position = SCNVector3Make(0, 0, 0)
     }
 
     func setGeoposition(_ position: NSDictionary) {
-        
+
         guard let xPos = position.value(forKey: "x") as! Float?
             else { return warnForProp("X position") }
 
@@ -66,7 +66,7 @@ func warnForProp(_ prop:String) {
         guard let zPos = position.value(forKey: "z") as! Float?
             else { return warnForProp("Z position") }
 
-        let boxPosition = SCNVector3Make(xPos, yPos, zPos);
+        let boxPosition = SCNVector3Make(xPos, yPos, zPos)
         self.position = boxPosition
     }
 
@@ -74,7 +74,7 @@ func warnForProp(_ prop:String) {
         self.removeFromParentNode()
     }
 
-    func setColor(_ color:UIColor) {
+    func setColor(_ color: UIColor) {
         self.geometry?.firstMaterial?.diffuse.contents = color
     }
 }

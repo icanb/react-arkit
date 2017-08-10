@@ -9,6 +9,6 @@
 import Foundation
 import ARKit
 
-class ARKitDelegate:NSObject, ARSCNViewDelegate, ARSessionDelegate {
-    
+class ARKitDelegate: NSObject, ARSCNViewDelegate, ARSessionDelegate {
+
 }
