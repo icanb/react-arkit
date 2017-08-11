@@ -13,22 +13,22 @@ import ObjectiveC
 extension SCNNode {
 
     func isReactRootView() -> Bool {
-        return reactTag().intValue % 10 == 1
+        return self.reactTag.intValue % 10 == 1
     }
 
     private struct AssociatedKeys {
         static var keyForReactTag = "keyForReactTag"
     }
 
-    func setReactTag(_ reactTag: NSNumber) {
-        objc_setAssociatedObject(self, &AssociatedKeys.keyForReactTag, reactTag, .OBJC_ASSOCIATION_RETAIN)
+    var reactTag: NSNumber {
+        get {
+            return objc_getAssociatedObject(self, &AssociatedKeys.keyForReactTag) as! NSNumber
+        }
+        set {
+            objc_setAssociatedObject(self, &AssociatedKeys.keyForReactTag, newValue, .OBJC_ASSOCIATION_RETAIN)
+        }
     }
 
-    func reactTag() -> NSNumber {
-        let reactTag = objc_getAssociatedObject(self, &AssociatedKeys.keyForReactTag)
-        return reactTag as! NSNumber
-    }
-    
     // Need to mock React Native's UIView (see: UIView+Reach.h) extensions
     // here in order to let layout engine treat these  SCNNodes the same way
     func _reactSubviews() -> NSArray { return []; }

@@ -13,16 +13,16 @@ import ARKit
 
     func setSize(_ size: NSDictionary) {
 
-        guard let h = size.value(forKey: "height") as! CGFloat?
+        guard let h = size["height"] as! CGFloat?
         else { return warnForProp("height inside position") }
 
-        guard let w = size.value(forKey: "width") as! CGFloat?
+        guard let w = size["width"] as! CGFloat?
         else { return warnForProp("width inside position") }
 
-        guard let l = size.value(forKey: "length") as! CGFloat?
+        guard let l = size["length"] as! CGFloat?
         else { return warnForProp("length inside position") }
 
-        guard let chamferRadius = size.value(forKey: "chamferRadius") as! CGFloat?
+        guard let chamferRadius = size["chamferRadius"] as! CGFloat?
         else { return warnForProp("chamferRadius inside position") }
 
         var boxGeometry: SCNBox = SCNBox.init()

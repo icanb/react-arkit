@@ -44,6 +44,9 @@ import ARKit
         print(isEnabled)
     }
 
+    // We are overwriting addSubview that React-Native calls
+    // by default to translate these actions into
+    // SceneKit actions. addSubview becomes addChildNode
     override public func addSubview(_ view: UIView) {
         let obj:Any = view as Any
         if let node: SCNNode = obj as? SCNNode {
