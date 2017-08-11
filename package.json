@@ -4,6 +4,7 @@
   "version": "0.1.4",
   "description": "AR features for React Native, based on ARKit",
   "main": "index.js",
+  "homepage": "https://github.com/icanb/react-arkit/",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -14,6 +15,10 @@
     "ar",
     "augmented-reality"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:icanb/react-arkit.git"
+  },
   "author": "Ilter Canberk (@icanb)",
   "license": "MIT License",
   "peerDependencies": {
