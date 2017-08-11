@@ -1,11 +1,12 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React, { PropTypes } from 'react';
 import { requireNativeComponent } from 'react-native';
 
 var ARSceneView = requireNativeComponent('ARSceneView', ARSceneView);
 var ARNodeView = requireNativeComponent('ARNodeView', ARNode);
 var ARBoxNodeVew = requireNativeComponent('ARBoxNodeView', ARBoxNodeVew);
 var ARSphereNodeView = requireNativeComponent('ARSphereNodeView', ARSphereNodeView);
+var ARTextNodeView = requireNativeComponent('ARTextNodeView', ARSphereNodeView);
+
 
 class ARScene extends React.Component {
   render() {
@@ -31,14 +32,23 @@ class ARSphereNode extends React.Component {
   }
 }
 
+class ARTextNode extends React.Component {
+  render() {
+    return <ARTextNodeView {...this.props} />;
+  }
+}
+
+
 ARScene.propTypes = {
   debugEnabled: PropTypes.bool,
+  run: PropTypes.bool
 };
 
 ARNode.propTypes = {
   modelUrl: PropTypes.string,
   size: PropTypes.object,
-  geoposition: PropTypes.object
+  geoposition: PropTypes.object,
+  color: PropTypes.string
 }
 
 ARBoxNode.propTypes = {
@@ -53,5 +63,14 @@ ARSphereNode.propTypes = {
   geoposition: PropTypes.object
 }
 
+ARTextNode.propTypes = {
+  size: PropTypes.object,
+  color: PropTypes.string,
+  geoposition: PropTypes.object,
+  text: PropTypes.string.isRequired,
+  font: PropTypes.string
+}
+
+
 export default ARScene;
-export { ARNode, ARBoxNode, ARSphereNode };
+export { ARNode, ARBoxNode, ARSphereNode, ARTextNode };

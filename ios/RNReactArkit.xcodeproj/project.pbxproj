@@ -19,6 +19,8 @@
 		CE0694D41F3B756400B114CB /* ARSceneViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0694C51F3B756400B114CB /* ARSceneViewManager.m */; };
 		CE0694D51F3B756400B114CB /* SCNNode+Reactive.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE0694BF1F3B756300B114CB /* SCNNode+Reactive.swift */; };
 		CE0694D61F3B756400B114CB /* RCTNodeViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE0694C61F3B756400B114CB /* RCTNodeViewManager.m */; };
+		CE54A1ED1F3D94DD004C5A8F /* ARTextNodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE54A1EC1F3D94DD004C5A8F /* ARTextNodeView.swift */; };
+		CE54A1EF1F3D94EF004C5A8F /* ARTextNodeViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = CE54A1EE1F3D94EF004C5A8F /* ARTextNodeViewManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -50,6 +52,8 @@
 		CE0694C91F3B756400B114CB /* ARNodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARNodeView.swift; sourceTree = "<group>"; };
 		CE0694CA1F3B756400B114CB /* ARBoxNodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARBoxNodeView.swift; sourceTree = "<group>"; };
 		CE0694CB1F3B756400B114CB /* ARNodeViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ARNodeViewManager.m; sourceTree = "<group>"; };
+		CE54A1EC1F3D94DD004C5A8F /* ARTextNodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARTextNodeView.swift; sourceTree = "<group>"; };
+		CE54A1EE1F3D94EF004C5A8F /* ARTextNodeViewManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ARTextNodeViewManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +97,8 @@
 				CE0694C01F3B756300B114CB /* ARSphereNodeViewManager.m */,
 				CE0694C31F3B756400B114CB /* RCTNodeViewManager.h */,
 				CE0694C61F3B756400B114CB /* RCTNodeViewManager.m */,
+				CE54A1EC1F3D94DD004C5A8F /* ARTextNodeView.swift */,
+				CE54A1EE1F3D94EF004C5A8F /* ARTextNodeViewManager.m */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -170,11 +176,13 @@
 				CE0694CE1F3B756400B114CB /* ARSphereNodeView.swift in Sources */,
 				CE0694D31F3B756400B114CB /* ARNodeViewManager.m in Sources */,
 				B3E7B58A1CC2AC0600A0062D /* RNReactArkit.m in Sources */,
+				CE54A1ED1F3D94DD004C5A8F /* ARTextNodeView.swift in Sources */,
 				CE0694D21F3B756400B114CB /* ARSphereNodeViewManager.m in Sources */,
 				CE0694D01F3B756400B114CB /* ARKitDelegate.swift in Sources */,
 				CE0694CC1F3B756400B114CB /* ARBoxNodeViewManager.m in Sources */,
 				CE0694D11F3B756400B114CB /* ARNodeView.swift in Sources */,
 				CE0694CF1F3B756400B114CB /* ARBoxNodeView.swift in Sources */,
+				CE54A1EF1F3D94EF004C5A8F /* ARTextNodeViewManager.m in Sources */,
 				CE0694D41F3B756400B114CB /* ARSceneViewManager.m in Sources */,
 				CE0694D51F3B756400B114CB /* SCNNode+Reactive.swift in Sources */,
 				CE0694CD1F3B756400B114CB /* ARSceneView.swift in Sources */,

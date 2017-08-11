@@ -12,6 +12,8 @@ import ARKit
 
 @objc public class ARSceneView: ARSCNView {
 
+    var config: ARWorldTrackingSessionConfiguration = ARWorldTrackingSessionConfiguration()
+
     public override init(frame: CGRect) {
         super.init(frame: frame)
         self.initializeSessionAndProps()
@@ -27,21 +29,30 @@ import ARKit
     }
 
     func initializeSessionAndProps() {
-        let configuration = ARWorldTrackingSessionConfiguration()
-        configuration.planeDetection = .horizontal
-        self.session.run(configuration)
-        self.debugOptions = [ARSCNDebugOptions.showWorldOrigin, ARSCNDebugOptions.showFeaturePoints]
+        self.config.planeDetection = .horizontal
+        self.session.run(self.config)
+        self.autoenablesDefaultLighting = true
     }
 
     override public func layoutSubviews() {
         super.layoutSubviews()
         self.backgroundColor = UIColor.blue
-        print(">")
-        print(self.subviews)
     }
 
     func setDebugEnabled(_ isEnabled: Bool) {
-        print(isEnabled)
+        if (isEnabled) {
+            self.debugOptions = [ARSCNDebugOptions.showWorldOrigin, ARSCNDebugOptions.showFeaturePoints]
+        } else {
+            self.debugOptions = []
+        }
+    }
+
+    func setRun(_ shouldRun: Bool) {
+        if shouldRun == false {
+            self.session.pause()
+        } else {
+            self.session.run(self.config)
+        }
     }
 
     // We are overwriting addSubview that React-Native calls
