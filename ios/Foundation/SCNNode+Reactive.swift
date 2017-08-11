@@ -1,8 +1,8 @@
 //
 //  SCNNode+Reactive.swift
-//  ARReactiveTwo
+//  RNReactArkit
 //
-//  Created by Ilter Canberk on 8/7/17.
+//  Created by Ilter Canberk on 8/9/17.
 //  Copyright © 2017. All rights reserved.
 //
 
@@ -11,73 +11,37 @@ import ARKit
 import ObjectiveC
 
 extension SCNNode {
-    //- (void)setReactTag:(NSNumber *)reactTag
-    
-//    - (NSNumber *)reactTag
-//    {
-//    return objc_getAssociatedObject(self, _cmd);
-//    }
-//
-//    - (void)setReactTag:(NSNumber *)reactTag
-//    {
-//    objc_setAssociatedObject(self, @selector(reactTag), reactTag, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
-//    }
-//
-    
+
     func isReactRootView() -> Bool {
-        return reactTag().intValue % 10 == 1;
+        return self.reactTag.intValue % 10 == 1
     }
-    
+
     private struct AssociatedKeys {
-        static var keyForReactTag = "nsh_DescriptiveName"
+        static var keyForReactTag = "keyForReactTag"
     }
 
-    func setReactTag(_ reactTag:NSNumber) {
-        objc_setAssociatedObject(self, &AssociatedKeys.keyForReactTag, reactTag, .OBJC_ASSOCIATION_RETAIN);
-    }
-    
-    func reactTag() -> NSNumber {
-        let reactTag = objc_getAssociatedObject(self, &AssociatedKeys.keyForReactTag);
-        return reactTag as! NSNumber;
-    }
-    
-    func _reactSubviews() -> NSArray {
-        return [];
+    var reactTag: NSNumber {
+        get {
+            return objc_getAssociatedObject(self, &AssociatedKeys.keyForReactTag) as! NSNumber
+        }
+        set {
+            objc_setAssociatedObject(self, &AssociatedKeys.keyForReactTag, newValue, .OBJC_ASSOCIATION_RETAIN)
+        }
     }
 
-    func reactSubviews() -> NSArray {
-        return [];
-    }
-    
-    func setMultipleTouchEnabled(_ isTouchEnabled:Bool) {
-        
-    }
-    
-    func setUserInteractionEnabled(_ isUserIntercactionEnabled:Bool) {
-        
-    }
-    
-    func layer() -> CALayer? {
-        return nil
-    }
-    
+    // Need to mock React Native's UIView (see: UIView+Reach.h) extensions
+    // here in order to let layout engine treat these  SCNNodes the same way
+    func _reactSubviews() -> NSArray { return []; }
+    func reactSubviews() -> NSArray { return []; }
+
+    func setMultipleTouchEnabled(_ isTouchEnabled: Bool) { }
+    func setUserInteractionEnabled(_ isUserIntercactionEnabled: Bool) { }
+    func layer() -> CALayer? { return nil }
+    func _DEBUG_reactShadowView() -> Any? { return nil }
+    func reactLayoutDirection() -> UIUserInterfaceLayoutDirection { return UIUserInterfaceLayoutDirection.leftToRight; }
     func _DEBUG_setReactShadowView(_ shadowView:Any) { }
+    func setReactLayoutDirection(_ layoutDirection: UIUserInterfaceLayoutDirection) {}
+    func reactSetFrame(_ frame: CGRect) { }
+    func reactSetInheritedBackgroundColor(_ inheritedBackgroundColor: UIColor) { }
 
-    func _DEBUG_reactShadowView() -> Any? {
-        return nil
-    }
-    
-    func reactLayoutDirection() -> UIUserInterfaceLayoutDirection {
-        return UIUserInterfaceLayoutDirection.leftToRight;
-    }
-    
-    func setReactLayoutDirection(_ layoutDirection: UIUserInterfaceLayoutDirection) {
-        //
-    }
-    
-    func reactSetFrame(_ frame:CGRect) { }
-    
-    func reactSetInheritedBackgroundColor(_ inheritedBackgroundColor:UIColor) { }
-
-    
 }

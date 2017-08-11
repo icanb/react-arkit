@@ -1,8 +1,8 @@
 //
 //  ARSceneView.swift
-//  ARReactiveTwo
+//  RNReactArkit
 //
-//  Created by Ilter Canberk on 8/6/17.
+//  Created by Ilter Canberk on 8/9/17.
 //  Copyright © 2017. All rights reserved.
 //
 
@@ -10,13 +10,13 @@ import Foundation
 import UIKit
 import ARKit
 
-@objc public class ARSceneView:ARSCNView {
-    
+@objc public class ARSceneView: ARSCNView {
+
     public override init(frame: CGRect) {
         super.init(frame: frame)
         self.initializeSessionAndProps()
     }
-    
+
     public override init(frame: CGRect, options: [String : Any]? = nil) {
         super.init(frame: frame, options: options)
         self.initializeSessionAndProps()
@@ -25,7 +25,7 @@ import ARKit
     required public init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
-    
+
     func initializeSessionAndProps() {
         let configuration = ARWorldTrackingSessionConfiguration()
         configuration.planeDetection = .horizontal
@@ -39,17 +39,19 @@ import ARKit
         print(">")
         print(self.subviews)
     }
-    
-    func setDebugEnabled(_ isEnabled:Bool) {
+
+    func setDebugEnabled(_ isEnabled: Bool) {
         print(isEnabled)
     }
-    
-    override public func addSubview(_ view:UIView) {
+
+    // We are overwriting addSubview that React-Native calls
+    // by default to translate these actions into
+    // SceneKit actions. addSubview becomes addChildNode
+    override public func addSubview(_ view: UIView) {
         let obj:Any = view as Any
-        if let node:SCNNode = obj as? SCNNode {
+        if let node: SCNNode = obj as? SCNNode {
             self.scene.rootNode.addChildNode(node)
-        }
-        else {
+        } else {
             super.addSubview(view)
         }
     }
