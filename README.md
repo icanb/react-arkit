@@ -1,6 +1,9 @@
 # React ARKit
 
-AR library for React-Native, based on ARKit. (_iOS Only - Implemented in Swift_)
+AR library for React-Native, based on ARKit. Makes it super easy to use all the augmented reality features of iOS 11. 
+
+
+_iOS Only, until Android comes up with their version of ARKit_
 
 [![npm version](https://img.shields.io/npm/v/react-arkit.svg?style=flat)](https://www.npmjs.com/package/react-arkit)
 [![npm downloads](https://img.shields.io/npm/dm/react-arkit.svg?style=flat)](https://www.npmjs.com/package/react-arkit)
@@ -31,7 +34,7 @@ Make sure that your app supports Swift runtime. (How?)
 Import the ``ARScene`` component, and other node types that you need:
 
 ```javascript
-import ARScene, { ARBoxNode } from 'ARReactiveTwo';
+import ARScene, { ARBoxNode, ARTextNode, ARNode } from 'ARReactiveTwo';
 ```
 
 Define a scene:
@@ -47,34 +50,46 @@ Add any node in it and manipulate freely:
 ```javascript
 <ARScene style={{ height: 400, width: 300 }}>
     <ARBoxNode
-        geoposition={{x: 0.2, y: 0.1, z:-1.0}}
-        size={boxSize}
+        geoposition={{x: -0.5, y: 0.1, z:-1.0}}
+        size={{ height: 0.2,
+                width: 0.2,
+                length: 0.2,
+                chamferRadius: 0.5 }}
         color='#00F'/>
     <ARNode
         modelAssetPath={'Art.scnassets/billboard.dae:Billboard'}
-        geoposition={{x: -1, y: -1, z:-1}}/>
+        geoposition={{x: 0, y: 0.1, z:-1.0}}/>
+    <ARTextNode
+    	text={'AR is Awesome'}
+        color='#FF0'
+        size={{ fontSize: 0.2, depth: 0.2 }}
+        geoposition={{x: 0.5, 0.1, z:-1.0}/>
 </ARScene>
 ```
 
-## Documentation
+## [Documentation](DOCUMENTATION.MD)
 
-| Component | Description |
-|------|-------------|
-| ``ARScene`` |  Parent object that represents object represents a three-dimensional scene and its contents.. |
-| _Props_ | `run` |
-| ``ARNode`` | A structural element of in the 3D coordinate space, representing a position and transform in based on the parent node\scene. |
-|  _Props_ | `geoposition`, `size`, `color`, `modelAssetPath`|
-| ``ARBoxNode`` | Node that has the box geometry. |
-| ``ARSphereNode`` | Node that has the sphere geometry. |
 
-[Detailed Documentation](DOCUMENTATION.MD)
+* #### [ARScene](DOCUMENTATION.md#ARScene)
+	Parent object that represents object represents a three-dimensional scene and its contents. (Props: `debugEnabled`, `run`)
+
+* #### [ARNode](DOCUMENTATION.md#ARNode)
+	A structural element of in the 3D coordinate space, representing a position and transform in based on the parent node\scene. Can also represent custom 3d models as well as basic geometric shapes. (Props: `geoposition`, `size`, `color`, `modelAssetPath`)
+
+	* ##### [ARBoxNode](DOCUMENTATION.md#ARBoxNode)
+		Node that has the box geometry. Subclass of ARNode.
+
+	* ##### [ARSphereNode](DOCUMENTATION.md#ARSphereNode)
+		Node that has the sphere geometry. Subclass of ARNode.
+
+	* ##### [ARTextNode](DOCUMENTATION.md#ARTextNode)
+		Node that has the shape of a given text. Subclass of ARNode. (Additional prop: `text`)
+
 
 ## Contributing
 
-Any kind of contributions are very welcome. This library is still very bare-bones and has a lot of room for improvement. Please make sure to read the [Contributing Guide](CONTRIBUTING.MD) and feel free to make pull-requests!
+Any kind of contributions are very welcome. This library is still very bare-bones and has a lot of room for improvement. Please make sure to read the [Contributing Guide](CONTRIBUTING.md) and feel free to make pull-requests!
 
 For issues or feedback, please create an [Issue](https://github.com/icanb/react-arkit/issues/new). For questions, or help, please get in touch with @icanb.
-
-
 
 

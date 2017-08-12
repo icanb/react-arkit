@@ -1,11 +1,11 @@
-import React, { PropTypes } from 'react';
 import { requireNativeComponent } from 'react-native';
+import React, { PropTypes } from 'react';
 
 var ARSceneView = requireNativeComponent('ARSceneView', ARSceneView);
 var ARNodeView = requireNativeComponent('ARNodeView', ARNode);
 var ARBoxNodeVew = requireNativeComponent('ARBoxNodeView', ARBoxNodeVew);
 var ARSphereNodeView = requireNativeComponent('ARSphereNodeView', ARSphereNodeView);
-var ARTextNodeView = requireNativeComponent('ARTextNodeView', ARSphereNodeView);
+var ARTextNodeView = requireNativeComponent('ARTextNodeView', ARTextNodeView);
 
 
 class ARScene extends React.Component {
