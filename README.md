@@ -67,22 +67,22 @@ Add any node in it and manipulate freely:
 </ARScene>
 ```
 
-## [Documentation](DOCUMENTATION.MD)
+## [Documentation](DOCUMENTATION.md)
 
 
-* #### [ARScene](DOCUMENTATION.md#ARScene)
+* #### [ARScene](DOCUMENTATION.md#arscene)
 	Parent object that represents object represents a three-dimensional scene and its contents. (Props: `debugEnabled`, `run`)
 
-* #### [ARNode](DOCUMENTATION.md#ARNode)
+* #### [ARNode](DOCUMENTATION.md#arnode)
 	A structural element of in the 3D coordinate space, representing a position and transform in based on the parent node\scene. Can also represent custom 3d models as well as basic geometric shapes. (Props: `geoposition`, `size`, `color`, `modelAssetPath`)
 
-	* ##### [ARBoxNode](DOCUMENTATION.md#ARBoxNode)
+	* ##### [ARBoxNode](DOCUMENTATION.md#arboxnode)
 		Node that has the box geometry. Subclass of ARNode.
 
-	* ##### [ARSphereNode](DOCUMENTATION.md#ARSphereNode)
+	* ##### [ARSphereNode](DOCUMENTATION.md#arspherenode)
 		Node that has the sphere geometry. Subclass of ARNode.
 
-	* ##### [ARTextNode](DOCUMENTATION.md#ARTextNode)
+	* ##### [ARTextNode](DOCUMENTATION.md#artextnode)
 		Node that has the shape of a given text. Subclass of ARNode. (Additional prop: `text`)
 
 
