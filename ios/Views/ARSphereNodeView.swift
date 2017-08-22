@@ -15,7 +15,7 @@ import ARKit
         self.geometry = SCNSphere.init()
     }
 
-    func setSize(_ size: NSDictionary) {
+    override func setSize(_ size: NSDictionary) {
 
         guard let radiusVal = size.value(forKey: "radius") as! CGFloat?
         else { return warnForProp("radius within size"); }

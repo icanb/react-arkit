@@ -9,8 +9,27 @@ var ARTextNodeView = requireNativeComponent('ARTextNodeView', ARTextNodeView);
 
 
 class ARScene extends React.Component {
+  constructor(props) {
+    super(props)
+    this._onPlaneDetected = this._onPlaneDetected.bind(this);
+    this._onPlaneUpdated = this._onPlaneUpdated.bind(this);
+  }
+  
+  _onPlaneDetected(event) {
+    if (!this.props.onPlaneDetected) { return; }  
+    this.props.onPlaneDetected(event.nativeEvent);
+  }
+  
+  _onPlaneUpdated(event) {
+    if (!this.props.onPlaneUpdated) { return; }  
+    this.props.onPlaneUpdated(event.nativeEvent);
+  }
+
   render() {
-    return <ARSceneView {...this.props} />;
+    return <ARSceneView
+              {...this.props}
+              onPlaneDetected={this._onPlaneDetected}
+              onPlaneUpdated={this._onPlaneUpdated} />;
   }
 }
 
@@ -41,7 +60,9 @@ class ARTextNode extends React.Component {
 
 ARScene.propTypes = {
   debugEnabled: PropTypes.bool,
-  run: PropTypes.bool
+  run: PropTypes.bool,
+  onPlaneDetected: PropTypes.func,
+  onPlaneUpdated: PropTypes.func
 };
 
 ARNode.propTypes = {

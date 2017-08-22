@@ -15,7 +15,7 @@ import ARKit
         self.geometry = SCNText.init()
     }
 
-    func setSize(_ size: NSDictionary) {
+    override func setSize(_ size: NSDictionary) {
 
         var textGeometry: SCNText = SCNText.init()
 

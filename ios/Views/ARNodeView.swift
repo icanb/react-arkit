@@ -32,6 +32,18 @@ func warnForProp(_ prop: String) {
         self.geometry = SCNBox.init()
     }
 
+    func setSize(_ size: NSDictionary) {
+
+        if self.geometry == nil {
+            self.geometry = SCNGeometry.init()
+        }
+
+        if size["scale"] != nil {
+            let s: Float = Float(size["scale"] as! CGFloat)
+            self.scale = SCNVector3Make(s, s, s)
+        }
+    }
+
     func setModelAssetPath(_ source: NSString) {
         let urlParts = source.components(separatedBy: ":")
         let geoScene = SCNScene(named: urlParts[0])

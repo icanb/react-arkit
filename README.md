@@ -34,36 +34,43 @@ Make sure that your app supports Swift runtime. (How?)
 Import the ``ARScene`` component, and other node types that you need:
 
 ```javascript
-import ARScene, { ARBoxNode, ARTextNode, ARNode } from 'ARReactiveTwo';
+import ARScene, { ARBoxNode, ARTextNode, ARNode } from 'react-arkit';
 ```
 
 Define a scene:
 
 ```javascript
 <ARScene style={{ height: 400, width: 300 }}>
-
+{`Other AR nodes`}
 </ARScene>
 ```
 
 Add any node in it and manipulate freely:
 
 ```javascript
-<ARScene style={{ height: 400, width: 300 }}>
+<ARScene style={{ height: 400, width: 300 }}
+    debugEnabled
+    onPlaneDetected={({id, alignment, node, center, extent}) => {
+        console.log("Detected plane:", id);
+    }}
+    onPlaneUpdated={({id, alignment, node, center, extent}) => {
+        console.log("Updated plane:", id);
+    }}>
     <ARBoxNode
         geoposition={{x: -0.5, y: 0.1, z:-1.0}}
-        size={{ height: 0.2,
-                width: 0.2,
-                length: 0.2,
-                chamferRadius: 0.5 }}
+        size={{ height: 0.05,
+                width: 0.05,
+                length: 0.05,
+                chamferRadius: 0.01 }}
         color='#00F'/>
     <ARNode
         modelAssetPath={'Art.scnassets/billboard.dae:Billboard'}
         geoposition={{x: 0, y: 0.1, z:-1.0}}/>
     <ARTextNode
-    	text={'AR is Awesome'}
+      text={'AR is Awesome'}
         color='#FF0'
         size={{ fontSize: 0.2, depth: 0.2 }}
-        geoposition={{x: 0.5, 0.1, z:-1.0}/>
+        geoposition={{x: 0.5, y: 0.1, z:-1.0}}/>
 </ARScene>
 ```
 
@@ -71,19 +78,19 @@ Add any node in it and manipulate freely:
 
 
 * #### [ARScene](DOCUMENTATION.md#arscene)
-	Parent object that represents object represents a three-dimensional scene and its contents. (Props: `debugEnabled`, `run`)
+    Parent object that represents object represents a three-dimensional scene and its contents. (Props: `debugEnabled`, `run`)
 
 * #### [ARNode](DOCUMENTATION.md#arnode)
-	A structural element of in the 3D coordinate space, representing a position and transform in based on the parent node\scene. Can also represent custom 3d models as well as basic geometric shapes. (Props: `geoposition`, `size`, `color`, `modelAssetPath`)
+    A structural element of in the 3D coordinate space, representing a position and transform in based on the parent node\scene. Can also represent custom 3d models as well as basic geometric shapes. (Props: `geoposition`, `size`, `color`, `modelAssetPath`)
 
-	* ##### [ARBoxNode](DOCUMENTATION.md#arboxnode)
-		Node that has the box geometry. Subclass of ARNode.
+    * ##### [ARBoxNode](DOCUMENTATION.md#arboxnode)
+        Node that has the box geometry. Subclass of ARNode.
 
-	* ##### [ARSphereNode](DOCUMENTATION.md#arspherenode)
-		Node that has the sphere geometry. Subclass of ARNode.
+    * ##### [ARSphereNode](DOCUMENTATION.md#arspherenode)
+        Node that has the sphere geometry. Subclass of ARNode.
 
-	* ##### [ARTextNode](DOCUMENTATION.md#artextnode)
-		Node that has the shape of a given text. Subclass of ARNode. (Additional prop: `text`)
+    * ##### [ARTextNode](DOCUMENTATION.md#artextnode)
+        Node that has the shape of a given text. Subclass of ARNode. (Additional prop: `text`)
 
 
 ## Contributing
@@ -91,5 +98,3 @@ Add any node in it and manipulate freely:
 Any kind of contributions are very welcome. This library is still very bare-bones and has a lot of room for improvement. Please make sure to read the [Contributing Guide](CONTRIBUTING.md) and feel free to make pull-requests!
 
 For issues or feedback, please create an [Issue](https://github.com/icanb/react-arkit/issues/new). For questions, or help, please get in touch with @icanb.
-
-

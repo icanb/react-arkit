@@ -11,4 +11,7 @@ import ARKit
 
 class ARKitDelegate: NSObject, ARSCNViewDelegate, ARSessionDelegate {
 
+    func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        print("YO")
+    }
 }

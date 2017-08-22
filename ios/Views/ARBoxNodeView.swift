@@ -11,7 +11,7 @@ import ARKit
 
 @objc public class ARBoxNodeView: ARNodeView {
 
-    func setSize(_ size: NSDictionary) {
+    override func setSize(_ size: NSDictionary) {
 
         guard let h = size["height"] as! CGFloat?
         else { return warnForProp("height inside position") }

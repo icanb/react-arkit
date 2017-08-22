@@ -6,6 +6,8 @@
 
 #import <React/RCTBridgeModule.h>
 #import <React/RCTViewManager.h>
+#import <React/RCTComponent.h>
+
 #import "RNReactArkit-Swift.h"
 
 @interface ARSceneViewManager : RCTViewManager
@@ -24,5 +26,8 @@ RCT_EXPORT_MODULE()
 
 RCT_EXPORT_VIEW_PROPERTY(debugEnabled, BOOL)
 RCT_EXPORT_VIEW_PROPERTY(run, BOOL)
+
+RCT_EXPORT_VIEW_PROPERTY(onPlaneDetected, RCTBubblingEventBlock)
+RCT_EXPORT_VIEW_PROPERTY(onPlaneUpdated, RCTBubblingEventBlock)
 
 @end

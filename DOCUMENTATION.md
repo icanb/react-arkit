@@ -10,7 +10,7 @@ Parent object that represents object represents a three-dimensional scene and it
 
 | Prop | Type | Default | Description |
 |---|---|---|---|
-| `debug` | `Boolean` | `false` | Debug modes show useful information such as the feature points.
+| `debugEnabled` | `Boolean` | `false` | Debug modes show useful information such as the feature points.
 | `run` | `Boolean` | `true` | Whether the session is running. Session can be paused by setting this property to false.
 
 
@@ -18,10 +18,8 @@ Parent object that represents object represents a three-dimensional scene and it
 
 | Method Name | Arguments | Notes
 |---|---|---|
-
-WIP: Will support more events such as plane detection etc soon!
-
-<br>
+|`onPlaneDetected`| Object <br> <small>{ alignment\<string\>, center:{x,y,z}, extent: {x,y,z},node:{x,y,z}, target \<number\> } | Returns the details when a new plane is detected |
+|`onPlaneUpdated`| Object <br> <small>{ alignment\<string\>, center:{x,y,z}, extent: {x,y,z},node:{x,y,z}, target \<number\> } | Returns the details when a detected plane is updated|
 
 
 ## ARNode

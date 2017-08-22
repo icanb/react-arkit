@@ -10,9 +10,11 @@ import Foundation
 import UIKit
 import ARKit
 
-@objc public class ARSceneView: ARSCNView {
+@objc public class ARSceneView: ARSCNView, ARSCNViewDelegate, ARSessionDelegate {
 
     var config: ARWorldTrackingSessionConfiguration = ARWorldTrackingSessionConfiguration()
+    var onPlaneDetectedFn: RCTBubblingEventBlock?
+    var onPlaneUpdatedFn: RCTBubblingEventBlock?
 
     public override init(frame: CGRect) {
         super.init(frame: frame)
@@ -29,8 +31,11 @@ import ARKit
     }
 
     func initializeSessionAndProps() {
-        self.config.planeDetection = .horizontal
+        self.config = ARWorldTrackingSessionConfiguration()
+        self.config.planeDetection = [.horizontal]
+        self.delegate = self
         self.session.run(self.config)
+        self.session.delegate = self
         self.autoenablesDefaultLighting = true
     }
 
@@ -45,6 +50,8 @@ import ARKit
         } else {
             self.debugOptions = []
         }
+        self.delegate = self
+
     }
 
     func setRun(_ shouldRun: Bool) {
@@ -52,6 +59,67 @@ import ARKit
             self.session.pause()
         } else {
             self.session.run(self.config)
+        }
+    }
+
+    func setOnPlaneDetected(_ a:@escaping RCTBubblingEventBlock) {
+        self.onPlaneDetectedFn = a
+    }
+
+    func setOnPlaneUpdated(_ a:@escaping RCTBubblingEventBlock) {
+        self.onPlaneUpdatedFn = a
+    }
+
+    public func renderer(_ renderer: SCNSceneRenderer, didAdd node: SCNNode, for anchor: ARAnchor) {
+        if let planeAnchor: ARPlaneAnchor = anchor as? ARPlaneAnchor {
+            if self.onPlaneDetectedFn != nil {
+                self.onPlaneDetectedFn!([
+                    "id": planeAnchor.identifier.uuidString,
+                    "alignment": planeAnchor.alignment,
+                    "node": [
+                        "x": node.position.x,
+                        "y": node.position.y,
+                        "z": node.position.z
+                    ],
+                    "center": [
+                        "x": planeAnchor.center.x,
+                        "y": planeAnchor.center.y,
+                        "z": planeAnchor.center.z
+                    ],
+                    "extent": [
+                        "x": planeAnchor.extent.x,
+                        "y": planeAnchor.extent.y,
+                        "z": planeAnchor.extent.z
+                    ]
+                ])
+            }
+        }
+    }
+
+    public func renderer(_ renderer: SCNSceneRenderer, didUpdate node: SCNNode, for anchor: ARAnchor) {
+
+        if let planeAnchor: ARPlaneAnchor = anchor as? ARPlaneAnchor {
+            if self.onPlaneUpdatedFn != nil {
+                self.onPlaneUpdatedFn!([
+                    "id": anchor.identifier.uuidString,
+                    "alignment": planeAnchor.alignment,
+                    "node": [
+                        "x": node.position.x,
+                        "y": node.position.y,
+                        "z": node.position.z
+                    ],
+                    "center": [
+                        "x": planeAnchor.center.x,
+                        "y": planeAnchor.center.y,
+                        "z": planeAnchor.center.z
+                    ],
+                    "extent": [
+                        "x": planeAnchor.extent.x,
+                        "y": planeAnchor.extent.y,
+                        "z": planeAnchor.extent.z
+                    ]
+                ])
+            }
         }
     }
 
@@ -65,5 +133,12 @@ import ARKit
         } else {
             super.addSubview(view)
         }
+
+        self.config = ARWorldTrackingSessionConfiguration()
+        self.config.planeDetection = [.horizontal]
+        self.delegate = self
+        self.session.run(self.config)
+        self.session.delegate = self
+
     }
 }
