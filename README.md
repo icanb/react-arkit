@@ -2,6 +2,10 @@
 
 AR library for React-Native, based on ARKit. Makes it super easy to use all the augmented reality features of iOS 11. 
 
+#####  [Check out the example app using react-arkit](https://github.com/icanb/react-arkit-example)
+
+<img src="https://user-images.githubusercontent.com/803072/29694758-684de644-88f3-11e7-8c6d-bf7b55de44a3.PNG" style="display:inline';" width="200" alt="Custom model with plane detection">
+
 
 _iOS Only, until Android comes up with their version of ARKit_
 
@@ -25,9 +29,10 @@ Link the package to the existing app
 react-native link react-native-arkit
 ```
 
-Make sure that your app allows camera usage. (How?)
-Make sure that your app supports Swift runtime. (How?)
+Make sure that your app allows camera usage. ([How?](https://github.com/icanb/react-arkit/blob/master/SETUP.md#camera-permissions))
+Make sure that your app supports Swift runtime. ([How?](https://github.com/icanb/react-arkit/blob/master/SETUP.md#making-the-project-swift-compatible))
 
+Or just clone the [example app](https://github.com/icanb/react-arkit-example) and make edits on it.
 
 ## Usage
 
@@ -73,6 +78,8 @@ Add any node in it and manipulate freely:
         geoposition={{x: 0.5, y: 0.1, z:-1.0}}/>
 </ARScene>
 ```
+
+Refer to the [example app](https://github.com/icanb/react-arkit-example/blob/master/index.ios.js) for more detailed sample implementations.
 
 ## [Documentation](DOCUMENTATION.md)
 
