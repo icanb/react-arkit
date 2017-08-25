@@ -1,5 +1,5 @@
 
-# React ARKit SETIP
+# React ARKit SETUP
 
 ## Getting started
 
