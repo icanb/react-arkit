@@ -1,7 +1,7 @@
 
 {
   "name": "react-arkit",
-  "version": "0.1.7",
+  "version": "0.1.8",
   "description": "AR features for React Native, based on ARKit",
   "main": "index.js",
   "homepage": "https://github.com/icanb/react-arkit/",
