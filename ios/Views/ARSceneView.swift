@@ -12,7 +12,7 @@ import ARKit
 
 @objc public class ARSceneView: ARSCNView, ARSCNViewDelegate, ARSessionDelegate {
 
-    var config: ARWorldTrackingSessionConfiguration = ARWorldTrackingSessionConfiguration()
+    var config: ARWorldTrackingConfiguration = ARWorldTrackingConfiguration()
     var onPlaneDetectedFn: RCTBubblingEventBlock?
     var onPlaneUpdatedFn: RCTBubblingEventBlock?
 
@@ -31,7 +31,7 @@ import ARKit
     }
 
     func initializeSessionAndProps() {
-        self.config = ARWorldTrackingSessionConfiguration()
+        self.config = ARWorldTrackingConfiguration()
         self.config.planeDetection = [.horizontal]
         self.delegate = self
         self.session.run(self.config)
@@ -134,7 +134,7 @@ import ARKit
             super.addSubview(view)
         }
 
-        self.config = ARWorldTrackingSessionConfiguration()
+        self.config = ARWorldTrackingConfiguration()
         self.config.planeDetection = [.horizontal]
         self.delegate = self
         self.session.run(self.config)
